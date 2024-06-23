@@ -1,0 +1,14 @@
+<html>
+<body>
+
+  <h3>A Demonstration of how your browser handles your HTML with Java Script as Client in URL in the Address bar to communicate with your server</h3>
+  <h3>1. A Demonstration of how your browser as Client sends your FORM element data to your Server in URL in the Address bar when Submitted</h3>
+  <h3>2. A Demonstration of how your Server responses to your FORM element when Submitted</h3>
+   <p id="para"></p>
+</body>   
+<script>
+const url = window.location.href;
+const p = document.getElementById('para');
+p.innerHTML = url;
+</script>
+</html>    

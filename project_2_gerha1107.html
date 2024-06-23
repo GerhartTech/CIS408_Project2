@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="p2.css"/>
+   <title>Project 2</title>
+</head>
+<body>
+  <br>
+   <div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'home')">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'myweb')">My Web</button>
+  <button class="tablinks" onclick="openTab(event, 'courses')">My Courses</button>
+  <button class="tablinks" onclick="openTab(event, 'player')">Video Player</button>
+  <button class="tablinks" onclick="openTab(event, 'form')">Add to contact list</button>
+</div>
+<!---------HOME SECTION----------->
+<div id="home" class="content">
+  <h2>Homepage</h2>
+  <img src="photos/myPortrait.png" id="portrait" height="65%" width="25%" width="auto"/>
+  <p>Name: BG<br>CSU ID: *******<br>E-Mail: <br>Website: <br></p>
+  
+  <center>
+    <div id="slideshow">
+      <div class="slider">
+        <img class="slideimg" src="photos/jWebb.jpg" height="30%", width="40%"/>
+      </div>
+      <div class="slider">
+        <img class="slideimg" src="photos/hippie.jpg" height="30%", width="40%"/>
+      </div>
+      <div class="slider">
+        <img class="slideimg" src="photos/lion.jpg" height="30%", width="40%"/> 
+      </div>
+    </div>
+  </center>
+  
+</div> 
+
+<!---------MY WEB SECTION----------->
+<div id="myweb" class="content">
+  <h2>My Web</h2>
+  <br>
+  <h3>Extra credit.</h3>
+    <div style="position: absolute; top:-1;">
+      <div class="runimg">
+        <img class="run" src="photos/run-1.png" height="50%", width="50%"/>
+      </div>
+      <div class="runimg">
+        <img class="run" src="photos/run-2.png" height="50%", width="50%"/>
+      </div>
+      <div class="runimg">
+        <img class="run" src="photos/run-3.png" height="50%", width="50%"/> 
+      </div>
+      <div class="runimg">
+        <img class="run" src="photos/run-4.png" height="50%", width="50%"/> 
+      </div>
+      <div class="runimg">
+        <img class="run" src="photos/run-5.png" height="50%", width="50%"/> 
+      </div>
+    </div>
+    
+   
+  <br><br><br><br><br><br>
+  <a href="https://eecs.csuohio.edu/~sschung/" target="frame1" class="anchors">CIS408 class webpage</a><br>
+    <div class="frames">
+      <iframe src="https://eecs.csuohio.edu/~brgerhar/" name="frame1" height="500" width="1000">My First iframe.<br></iframe>
+    </div>
+    <br><a href="https://www.w3schools.com/" target="frame2" class="anchors">World Wide Web consortium</a><br>
+    
+    <div class="frames">
+      <iframe src="https://eecs.csuohio.edu/~brgerhar/" name="frame2" height="500" width="1000">My Second iframe.</iframe>
+    </div>
+   
+ 
+</div>
+<!---------MY COURSES SECTION----------->
+<div id="courses" class="content">
+  <h2>My Courses</h2>
+  <ul>
+    <li>EEC494 - Senior Design</li>
+    <li>CIS457 - Computer Graphics</li>
+    <li>CIS480 - Computer Architecture</li>
+    <li>CIS492 - Big Data</li>
+    <li><a href="CIS408/MyCIS408.html">CIS408 - Internet Programming</a></li>
+</ul>
+</div>
+<!---------VIDEO PLAYER SECTION----------->
+<div id="player" class="content">
+  <center>
+     <h2>Video Player</h2>
+    <video id="vid" width="480" height="340">
+    <source src="videos/Project2Video.mp4" type="video/mp4"/>
+   </video>
+   <div id="vidctrls">
+     <button type="button" id="playbtn" class="vidctrl" onclick="Playpause()">&#x25B6;</button>
+     <button id="ffwbtn"class="vidctrl" onclick="Restart()">|></button>
+     <button id="rwdbtn" class="vidctrl" onclick="Skipback()">-5</button>
+     <button class="vidctrl" onclick="Skipfwd()">+5</button>
+   </div>
+
+  </center>
+</div>
+<!---------SUBMIT FORM SECTION-----------> 
+<div id="form" class="content">
+  <h2>Add To Contact List</h2>
+  <form id="Form" action="/ServerScriptFile.html">
+    <p>First Name: <input id='input1' type="text" name="first_name" value=""></p>
+    <p>Last Name: <input id='input2' type="text" name="last_name" value=""></p>
+    <p>E-mail: <input type="email" name="User_email" value=""></p>
+    <button type="submit">submit</button>
+ </form>
+ <p>Click the "Verify" button to display your contact info and the URL for where to send the form data when the form above is submitted.</p>
+ <button onclick="Verify()">Verify</button>
+ <button onclick="moveImage()">Animate</button>
+ <canvas id="myCanvas" height="300" width="1000">Your browser does not support canvas</canvas> 
+ <p id="d1"></p>
+ <p id="d2"></p>
+ <p id="d3"></p>
+ <p id="d4"></p>
+ <p id="d5"></p>
+ <p id="d6"></p>
+
+
+</div>
+</body>
+<script>
+
+  function openTab(event, tabname) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove("show");
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabname).classList.add("show");
+    event.currentTarget.classList.add("active");
+  }
+
+let slideIndex = 0;
+let runningIndex = 0;
+showSlides();
+RunnerGirl();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slider");
+    let image = document.getElementsByClassName("slideimg");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1
+    }    
+   
+    slides[slideIndex-1].style.display = "block";  
+    image[slideIndex-1].className += " active";
+    setTimeout(showSlides, 1500); 
+  }
+
+  function RunnerGirl() {
+    let i;
+    let contain = document.getElementsByClassName("runimg");
+    let image = document.getElementsByClassName("run");
+    for (i = 0; i < contain.length; i++) {
+      contain[i].style.display = "none";  
+    }
+    runningIndex++;
+    if (runningIndex > contain.length) {
+      runningIndex = 1
+    }    
+   
+    contain[runningIndex-1].style.display = "block";  
+    image[runningIndex-1].className += " active";
+    setTimeout(RunnerGirl, 60); 
+  }
+
+
+
+
+
+
+// Code for video player.
+const video = document.getElementById("vid");
+const btntxt = document.getElementById("playbtn");
+var isplaying = false;
+
+
+function Playpause() {
+  if (isplaying == false) {
+    video.play();  
+    btntxt.innerHTML = '&#x2016;'; 
+    isplaying = true;
+  } else {
+    video.pause();  
+    btntxt.innerHTML = '&#x25B6;';
+    isplaying = false;
+  } 
+}
+
+function Skipfwd() {
+  const timeLeft = video.duration - video.currentTime;
+  if (timeLeft <= 5) {
+    video.currentTime += timeLeft-0.1;
+  } else {
+    video.currentTime += 5;
+  }
+
+}
+
+function Skipback() {
+  video.currentTime -= 5;
+}
+
+function Restart() {
+  
+  if (!video.paused) {
+    video.pause();
+    video.currentTime = 0;
+    isplaying =false;
+    btntxt.innerHTML = '&#x25B6;';
+  } else {
+    video.pause();
+    video.currentTime = 0;
+  }
+}
+
+video.onended = function(e) {
+    isplaying = false;
+    btntxt.innerHTML = '&#x25B6;';
+}
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+var image = new Image();
+image.src = "photos\\run-1.png"
+var x = 20;
+function moveImage() { 
+  x+=2;
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(image, x, canvas.height-250);
+  window.requestAnimationFrame(moveImage);
+}
+
+</script>
+</html>

@@ -1,0 +1,97 @@
+html {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color:lightslategrey;
+}
+
+.anchors {
+  position: absolute;
+  top: -5;
+  left: 2; 
+}
+
+.tab {
+   overflow: hidden;
+   border-bottom: 1px solid black;
+ }
+ 
+ .tab button {
+  background-color: lightgrey;
+   float: left;
+   border-left: 1px;
+   border-right: 1px;
+   border-top: 1px;
+   outline: none;
+   cursor: pointer;
+   padding: 5px 10px;
+   transition: 0.3s;
+   margin-left: 5px;
+   border: 1px solid black;
+   position: relative;
+ }
+ 
+ .tab button:hover {
+   background-color: #ddd;
+ }
+ 
+ .tab button.active {
+   background-color: white;
+   border-bottom: 10px lightgrey;
+   font-weight: bolder;
+ }
+ 
+ .content {
+   display: none;
+   padding: 6px 12px;
+   border: 1px solid black;
+   border-top: none;
+ }
+ 
+ .content.show {
+   display: block;
+   background-color: white;
+ }
+
+.vidctrl {
+  background-color:black;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border: 1px solid black;
+  
+  cursor: pointer;
+}
+
+ #vidctrls {
+  opacity: 0;
+ }
+
+ #vidctrls:hover {
+  width:fit-content;
+  background-color: black;
+  opacity: 1;
+ }
+
+ #portrait {
+  border-radius: 50%;
+ }
+
+ #form {
+  background-color: orange;
+  margin-right: 5%;
+  margin-left: 5%;
+ }
+
+
+
+
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
